@@ -590,8 +590,44 @@ body.nav-opened .site-wrapper {
     overflow: hidden;
 }
 
+.main-header .mouse {
+    width: 25px;
+    position: absolute;
+    height: 36px;
+    border-radius: 15px;
+    border: 2px solid #888;
+    border: 2px solid rgba(255,255,255,0.27);
+    bottom: 40px;
+    right: 40px;
+    margin-left: -12px;
+    cursor: pointer;
+    transition: border-color 0.2s ease-in;
+}
+
+.main-header .mouse .scroll {
+    display: block;
+    margin: 6px auto;
+    width: 3px;
+    height: 6px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.68);
+    animation-duration: 2s;
+    animation-name: scroll;
+    animation-iteration-count: infinite;
+}
+
 .main-header .inner {
     width: 80%;
+}
+
+.inner .socials{
+    font-size: 4rem;
+    margin-top: 2rem;
+}
+
+.socials a{
+    color: white;
+    text-decoration: none;
 }
 
 .main-nav {
@@ -792,7 +828,7 @@ body.nav-opened .nav {
 
 
 /* Create a bouncing scroll-down arrow on homepage with cover image */
-.scroll-down {
+/*.scroll-down {
     display: block;
     position: absolute;
     z-index: 100;
@@ -810,7 +846,7 @@ body.nav-opened .nav {
     transform: rotate(-90deg);
     -webkit-animation: bounce 4s 2s infinite;
     animation: bounce 4s 2s infinite;
-}
+}*/
 
 /* Stop it bouncing and increase contrast when hovered */
 .scroll-down:hover {
@@ -1078,7 +1114,7 @@ body.page-template .post-title {
     margin-left: 8px;
     padding-left: 12px;
     border-left: #d5dbde 1px solid;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     font-size: 1.3rem;
     white-space: nowrap;
 }
@@ -1724,6 +1760,8 @@ body.page-template .post-title {
     font-size: 1rem;
     line-height: 1.75em;
     color: #BBC7CC;
+    background: black;
+    text-align: center;
 }
 
 .site-footer a {
@@ -1770,7 +1808,7 @@ body.page-template .post-title {
         padding: 15% 0;
     }
 
-    .scroll-down,
+    /*.scroll-down,*/
     .home-template .main-header:after { display: none; }
 
     .paged .main-header {
@@ -2002,6 +2040,7 @@ body.page-template .post-title {
         line-height: 1.65em;
     }
 
+    .scroll-down,
     .post-date {
         display: none;
     }
@@ -2129,8 +2168,13 @@ body.page-template .post-title {
         margin: 10px 0;
     }
 
+    .older-posts >i,
+    .newer-posts >i{
+        display: none;
+    }
+
     .page-number {
-        display: block;
+
     }
 
     .site-footer {
@@ -2246,7 +2290,21 @@ body.page-template .post-title {
     }
 }
 
-
+@keyframes scroll{
+    0%{
+        opacity: 0;
+    }
+    10%{
+        opacity: 1;
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+    100%{
+        opacity: 0;
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+    }
+}
 /* ==========================================================================
    End of file. Animations should be the last thing here. Do not add stuff
    below this point, or it will probably fuck everything up.
