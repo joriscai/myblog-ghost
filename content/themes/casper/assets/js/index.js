@@ -6,6 +6,8 @@
 (function ($, undefined) {
     "use strict";
 
+
+
     var $document = $(document);
 
     $document.ready(function () {
@@ -53,4 +55,32 @@
         });
 
     };
+
+    // $('#search-input').focus(function () {
+    //     $('.nav ul').addClass('hidden');
+    //     var navWidth = $(document).outerWidth() - $('.nav').outerWidth() - $('.other').outerWidth();
+    //     console.log($('.search-box').outerWidth() + " " + $('.search-box').width());
+    //     console.log(parseInt($('.nav').outerWidth()));
+    //     // navWidth += $('.nav ul').outerWidth();
+    //     $('.search-other').width($(document).outerWidth() - $('.nav').outerWidth() - 2)
+    //     $('.search-box').width(parseInt(navWidth - $('.search-box').outerWidth() + $('.search-box').width()));
+    //     // $('.search-box').width(parseInt(navWidth - 40));
+    //     $(this).width(navWidth - $(this).outerWidth() + $(this).width());
+    // }).blur(function () {
+    //     $('.nav ul').removeClass('hidden');
+    //     $('.search-box').removeAttr('style');
+    //     $('.search-other').removeAttr('style');
+    //     $(this).removeAttr('style');
+    // })
+
+    $(window).on('scroll', function () {
+        var header = $('.header-menu');
+        var h = $(window).scrollTop() - $(window).height() + header.height();
+        var flag = header.hasClass('shadow');
+        if (h > 0 && !flag) {
+            header.addClass('shadow')
+        }else if (h < 0 && flag) {
+            header.removeClass('shadow');
+        }
+    })
 })(jQuery);
