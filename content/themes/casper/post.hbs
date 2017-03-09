@@ -9,9 +9,9 @@
 <header class="main-header post-head {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
     <nav class="main-nav {{#if image}}overlay{{/if}} clearfix">
         {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
-        {{#if @blog.navigation}}
+        <!-- {{#if @blog.navigation}}
             <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
-        {{/if}}
+        {{/if}} -->
     </nav>
 </header>
 
@@ -32,7 +32,7 @@
         <footer class="post-footer">
 
         {{!-- Everything inside the #author tags pulls data from the author --}}
-        {{#author}}
+        <!-- {{#author}}
 
             {{#if image}}
             <figure class="author-image">
@@ -54,9 +54,9 @@
                 </div>
             </section>
 
-        {{/author}}
+        {{/author}} -->
 
-            <section class="share">
+            <!-- <section class="share">
                 <h4>Share this post</h4>
                 <a class="icon-twitter" href="https://twitter.com/intent/tweet?text={{encode title}}&amp;url={{url absolute="true"}}"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
@@ -70,7 +70,7 @@
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
-            </section>
+            </section> -->
 
             {{!-- Email subscribe form at the bottom of the page --}}
             {{#if @labs.subscribers}}
@@ -88,7 +88,7 @@
 </main>
 
 {{!-- Links to Previous/Next posts --}}
-<aside class="read-next">
+<!-- <aside class="read-next">
     {{#next_post}}
     <a class="read-next-story {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
         <section class="post">
@@ -105,6 +105,6 @@
         </section>
     </a>
     {{/prev_post}}
-</aside>
+</aside> -->
 
 {{/post}}
